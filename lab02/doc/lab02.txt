@@ -1,0 +1,80 @@
+Лабораторна робота №2. Вступ до програмування. Основи debug процессу
+строки Linux
+### 1.1
+Власенко Аліна Валеріївна
+студентка групи KIT-121Г
+09.10.2021
+### 1.2 Загальне завдання
+Установка середовища для подальшої роботи з предмету “Програмування"
+### 1.3 Хід роботи
+1)Склонувалася з створеного репозиторія(git clone)
+Cloning into 'sample_project'...
+remote: Enumerating objects: 131, done.
+remote: Counting objects: 100% (131/131), done.
+remote: Compressing objects: 100% (80/80), done.
+remote: Total 131 (delta 58), reused 87 (delta 37), pack-reused 0
+Receiving objects: 100% (131/131), 283.71 KiB | 2.18 MiB/s, done.
+Resolving deltas: 100% (58/58), done.
+2)Скопіювала наступні файли (з урахуванням каталогів) з зовнішнього репозиторія
+(директорії lab00), що був наданий у попередній роботі у під-директорію lab02(mkdir lab01,cp  (файлы) lab01,cp -r (папки) lab01):
+• .clang-format
+• .clang-tidy
+• .gitlab-ci.yml
+• lab00/Doxyfile
+• lab00/Makefile
+• lab00/README.md
+• lab00/каталог “src”
+• lab00/каталог “test”
+3)Зафіксувала зміни (за допомогою команди git commit) під назвою “Initial copy of sample_project”(git add .,git commit)
+[main 13f3682] “Initial copy of sample_project”m
+ 13 files changed, 533 insertions(+), 29 deletions(-)
+ create mode 100644 .clang-format
+ create mode 100644 .clang-tidy
+ create mode 100644 .gitignore
+ create mode 100644 .gitlab-ci.yml
+ create mode 100644 lab02/Doxyfile
+ create mode 100644 lab02/Makefile
+ create mode 100644 lab02/README.md
+ create mode 100644 lab02/src/lib.c
+ create mode 100644 lab02/src/lib.h
+ create mode 100644 lab02/src/main.c
+ create mode 100644 lab02/test/test.c
+ rewrite lab03/doc/lab03.txt (99%)
+4)Виконала зміни на розсуд викладача, зібрала проект (зкомпілувала) та продемонструвала (cd lab01/src,vim lib.cpp,змінили)
+зміни.
+Інформація про тварину №01: Хотдог: зріст = 41 см, маса = 5 гр. 
+Інформація про тварину №02: Сережа наркоман: зріст = 31 см, маса = 30 гр. 
+Інформація про тварину №03: Сережа наркоман: зріст = 13 см, маса = 117 гр. 
+Інформація про тварину №04: Псина: зріст = 125 см, маса = 115 гр. 
+Інформація про тварину №05: Чел из города Орла: зріст = 97 см, маса = 105 гр. 
+Інформація про тварину №06: Чел из города Орла: зріст = 126 см, маса = 32 гр. 
+Інформація про тварину №07: Псина: зріст = 68 см, маса = 1 гр. 
+Інформація про тварину №08: Хотдог: зріст = 100 см, маса = 8 гр. 
+Інформація про тварину №09: Хотдог: зріст = 70 см, маса = 46 гр. 
+Інформація про тварину №10: Псина: зріст = 93 см, маса = 24 гр. 
+
+5)Відкрила в відлагоднику (debugger) lldb ваш виконуючий файл, зупинитися на 47 строці та визначити значення змінних(lldb ./main.bin,run,fr v)
+<pre>(animal [10]) animals = {
+  [0] = (type = DOG, height = 73, weight = 69)
+  [1] = (type = PIG, height = 36, weight = 61)
+  [2] = (type = COW, height = 56, weight = 102)
+  [3] = (type = CAT, height = 4, weight = 98)
+  [4] = (type = PIG, height = 46, weight = 34)
+  [5] = (type = DOG, height = 98, weight = 82)
+  [6] = (type = COW, height = 58, weight = 34)
+  [7] = (type = DOG, height = 33, weight = 25)
+  [8] = (type = PIG, height = 120, weight = 29)
+  [9] = (type = DOG, height = 66, weight = 56)
+}
+</pre>
+6)Зафіксувати зміни за допомогою команди git commit та завантажити зміни за допомогою команди git push.(git add .,git commit,git push)
+Enumerating objects: 41, done.
+Counting objects: 100% (41/41), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (28/28), done.
+Writing objects: 100% (33/33), 15.54 KiB | 1.73 MiB/s, done.
+Total 33 (delta 7), reused 0 (delta 0)
+To https://gitlab.com/wertwerty60/programing-vlasenko.git
+   00dd85e..46353ad  main -> main
+7)Дослідили режими компіляції з інформацією про відлагодження та без неї; описали різницю.
+Не має змоги подивится на source code завдяки команді l  
