@@ -20,10 +20,13 @@ const char *get_animal_type_name(enum animal_type type)
 		result = "Хотдог";
 		break;
 	case COW:
-		result = "Чел из города Орла";
+		result = "КИТ";
 		break;
 	case PIG:
-		result = "Сережа наркоман";
+		result = "Зайчик";
+		break;
+	case NOHOMO:
+		result = "Людина";
 		break;
 	default:
 		result = "N/A";
